@@ -94,4 +94,5 @@ C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\refint\veriYa
 C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\veriYapilari.pdb
 C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\veriYapilari.genruntimeconfig.cache
 C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\ref\veriYapilari.dll
-C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\compressed\sv2leqbr7w-cygscyekqy.gz
+C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\veriYapilari.sourcelink.json
+C:\Users\aktas\Desktop\DataStructure\veriYapilari\obj\Debug\net9.0\compressed\sv2leqbr7w-cvb0c5i7cu.gz
