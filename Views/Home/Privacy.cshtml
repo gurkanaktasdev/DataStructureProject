@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h1>Graph Simülasyonu</h1>
+
+<p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+
+<div id="cy" style="width: 800px; height: 600px; border: 1px solid black;"></div>
+
+<button id="sendGraphBtn" onclick="sendGraphToServer()">Veriyi Gönder</button>
+
+@section Scripts {
+    <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+    <script src="~/js/graph.js"></script>
+}
