@@ -1,4 +1,7 @@
-﻿var cy = cytoscape({    // cytoscape üzerinden oluşturduğumuz düğüm ve kenarları tutmamıza yarar.
+﻿
+
+
+var cy = cytoscape({    // cytoscape üzerinden oluşturduğumuz düğüm ve kenarları tutmamıza ve ekrana çizmemize yarar.
     container: document.getElementById('cy'),
     elements: [],
     style: [
@@ -31,10 +34,14 @@ cy.on('cxttap', function(event) {
     console.log('Tür:', element.group);
 });*/
 });
+
+
+
 // İki tıklama sonunda  edge oluşturma
 let sourceNode = null;
 
 cy.on('tap', function(event) {
+    var isDirectedGraph = document.getElementById('directedGraph').checked;
     if (event.target.group && event.target.group() === 'nodes') {
         if (sourceNode == null) {
             // İlk tıklanan düğüm source olacak
@@ -45,15 +52,16 @@ cy.on('tap', function(event) {
             var targetNode = event.target;
             if (sourceNode.id() !== targetNode.id()) {      // burada arka arkaya aynı düğüm seçilmesin diye konumuş bir koşul
                 var weight = prompt("Edge ağırlığı (sayı gir):", "1");
+                
                 if (weight != null) {
-                    cy.add({
-                        group: 'edges',
-                        data: { 
-                            source: sourceNode.id(), 
-                            target: targetNode.id(),
-                            weight: parseInt(weight)
-                        }
-                    });
+                        cy.add({            
+                            group: 'edges',
+                             data: { 
+                                source: sourceNode.id(), 
+                                target: targetNode.id(),
+                                weight: parseInt(weight)
+                            }
+                        }).style('target-arrow-shape', isDirectedGraph ? 'none' : 'triangle');    
                 }
             }
             // Renkleri sıfırla
