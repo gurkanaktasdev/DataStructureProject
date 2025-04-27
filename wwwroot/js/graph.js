@@ -10,7 +10,7 @@ var cy = cytoscape({    // cytoscape üzerinden oluşturduğumuz düğüm ve ken
             'width': 3, 
             'line-color': '#ccc', 
             'target-arrow-color': '#ccc', 
-            'target-arrow-shape': 'triangle',
+            'target-arrow-shape': 'none',
             'curve-style': 'bezier',
             'label': 'data(weight)', // ağırlık değerini kenarın üzerine yazmak için 
             'font-size': 12,
@@ -61,7 +61,7 @@ cy.on('tap', function(event) {
                                 target: targetNode.id(),
                                 weight: parseInt(weight)
                             }
-                        }).style('target-arrow-shape', isDirectedGraph ? 'none' : 'triangle');    
+                        }).style('target-arrow-shape', isDirectedGraph ? 'triangle' : 'none');    
                 }
             }
             // Renkleri sıfırla

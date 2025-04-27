@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6JN7THgMqc8CPSUfuSYToWZq9cQlqYWjybsTlZsp5B8=",
+  "Hash": "fqRnAY1w02Ysd+QgjJb3WQDMa1zpyIbOwYeNfevT4vI=",
   "Source": "veriYapilari",
   "BasePath": "_content/veriYapilari",
   "Mode": "Default",
@@ -1088,12 +1088,12 @@
       "OriginalItemSpec": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-1bzhdauj79.gz",
+      "Identity": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-9sydpxesdv.gz",
       "SourceId": "veriYapilari",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/veriYapilari",
-      "RelativePath": "js/graph#[.{fingerprint=1bzhdauj79}]?.js.gz",
+      "RelativePath": "js/graph#[.{fingerprint=9sydpxesdv}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1102,8 +1102,8 @@
       "RelatedAsset": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\wwwroot\\js\\graph.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "5ap6x9rns5",
-      "Integrity": "fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw=",
+      "Fingerprint": "doj2105r3e",
+      "Integrity": "4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\wwwroot\\js\\graph.js"
@@ -1459,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1bzhdauj79",
-      "Integrity": "/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU=",
+      "Fingerprint": "9sydpxesdv",
+      "Integrity": "Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\graph.js"
@@ -3324,13 +3324,13 @@
       ]
     },
     {
-      "Route": "js/graph.1bzhdauj79.js",
-      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-1bzhdauj79.gz",
+      "Route": "js/graph.9sydpxesdv.js",
+      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-9sydpxesdv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000478697942"
+          "Quality": "0.000478468900"
         }
       ],
       "ResponseHeaders": [
@@ -3340,15 +3340,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2088"
+          "Value": "2089"
         },
         {
           "Name": "ETag",
-          "Value": "\"fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw=\""
+          "Value": "\"4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:43:18 GMT"
+          "Value": "Sun, 27 Apr 2025 21:06:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3368,13 +3368,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU=\""
+          "Value": "W/\"Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1bzhdauj79"
+          "Value": "9sydpxesdv"
         },
         {
           "Name": "label",
@@ -3382,12 +3382,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU="
+          "Value": "sha256-Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw="
         }
       ]
     },
     {
-      "Route": "js/graph.1bzhdauj79.js",
+      "Route": "js/graph.9sydpxesdv.js",
       "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\wwwroot\\js\\graph.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3397,7 +3397,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5670"
+          "Value": "5666"
         },
         {
           "Name": "Content-Type",
@@ -3405,11 +3405,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU=\""
+          "Value": "\"Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:43:18 GMT"
+          "Value": "Sun, 27 Apr 2025 21:06:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3419,7 +3419,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1bzhdauj79"
+          "Value": "9sydpxesdv"
         },
         {
           "Name": "label",
@@ -3427,13 +3427,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU="
+          "Value": "sha256-Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw="
         }
       ]
     },
     {
-      "Route": "js/graph.1bzhdauj79.js.gz",
-      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-1bzhdauj79.gz",
+      "Route": "js/graph.9sydpxesdv.js.gz",
+      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-9sydpxesdv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3442,7 +3442,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2088"
+          "Value": "2089"
         },
         {
           "Name": "Content-Type",
@@ -3450,11 +3450,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw=\""
+          "Value": "\"4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:43:18 GMT"
+          "Value": "Sun, 27 Apr 2025 21:06:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3472,7 +3472,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1bzhdauj79"
+          "Value": "9sydpxesdv"
         },
         {
           "Name": "label",
@@ -3480,18 +3480,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw="
+          "Value": "sha256-4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY="
         }
       ]
     },
     {
       "Route": "js/graph.js",
-      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-1bzhdauj79.gz",
+      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-9sydpxesdv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000478697942"
+          "Quality": "0.000478468900"
         }
       ],
       "ResponseHeaders": [
@@ -3501,15 +3501,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2088"
+          "Value": "2089"
         },
         {
           "Name": "ETag",
-          "Value": "\"fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw=\""
+          "Value": "\"4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:43:18 GMT"
+          "Value": "Sun, 27 Apr 2025 21:06:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3529,13 +3529,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU=\""
+          "Value": "W/\"Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU="
+          "Value": "sha256-Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw="
         }
       ]
     },
@@ -3550,7 +3550,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5670"
+          "Value": "5666"
         },
         {
           "Name": "Content-Type",
@@ -3558,11 +3558,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU=\""
+          "Value": "\"Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:43:18 GMT"
+          "Value": "Sun, 27 Apr 2025 21:06:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3572,13 +3572,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/QFSxixo2FAcIHlhlyDQ5mxF/LZDZKW0jFaQeDbxhjU="
+          "Value": "sha256-Wa6UCVomMhhNQ7zSDwohBNGorT+hysa9OYWoEUbRvRw="
         }
       ]
     },
     {
       "Route": "js/graph.js.gz",
-      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-1bzhdauj79.gz",
+      "AssetFile": "C:\\Users\\aktas\\Desktop\\DataStructure\\veriYapilari\\obj\\Debug\\net9.0\\compressed\\sv2leqbr7w-9sydpxesdv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3587,7 +3587,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2088"
+          "Value": "2089"
         },
         {
           "Name": "Content-Type",
@@ -3595,11 +3595,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw=\""
+          "Value": "\"4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 20:43:18 GMT"
+          "Value": "Sun, 27 Apr 2025 21:06:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3617,7 +3617,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fbrgpHpo4NUXXIXgh9PXS7F9Ly/MJZGX/TKq6w1AYjw="
+          "Value": "sha256-4359YG2TECaLWKN0qCziM6dg9XJMLOQNOBQD/sspofY="
         }
       ]
     },
