@@ -18,30 +18,24 @@ var cy = cytoscape({    // cytoscape üzerinden oluşturduğumuz düğüm ve ken
         }}
     ]
 });
-// Sağ tıkla boş yere düğüm ekleme
-cy.on('cxttap', function(event) {
+//boş bir yere düğüm ekleme fonksiyonu
+function handleRightClick(event){
     if (event.target === cy) {
         var id = prompt("Yeni Düğüm ID'si:");
         if (id) {
             cy.add({ group: 'nodes', data: { id: id }, position: event.position });
-            
         }
     }
-    /*var elements = cy.elements();                 ->  Web üzerinden log çıktılarını kontrol ettim .
-    elements.forEach(function(element) {
-    console.log('Öğe:', element.id()); // Öğenin ID'sini yazdırır
-    console.log('Veri:', element.data()); // Öğenin tüm verisini yazdırır
-    console.log('Tür:', element.group);
-});*/
-});
-
+}
+//mouse sağ tık dinleyicisi'cxxtap' 
+cy.on('cxttap',handleRightClick);
 
 
 // İki tıklama sonunda  edge oluşturma
 let sourceNode = null;
-
-cy.on('tap', function(event) {
-    var isDirectedGraph = document.getElementById('directedGraph').checked;
+// edge ekleme 
+function addEdge(event) {
+    var isDirectedGraph = document.getElementById('directedGraph').checked; // graphın yönlü-yönsüz olması için kontrol değişkeni .
     if (event.target.group && event.target.group() === 'nodes') {
         if (sourceNode == null) {
             // İlk tıklanan düğüm source olacak
@@ -69,7 +63,9 @@ cy.on('tap', function(event) {
             sourceNode = null;
         }
     }
-});
+}
+// mouse sol tık dinleyicisi
+cy.on('tap', addEdge); 
 
 
 // Node veya Edge Silme  -> klavyeden gelen d nodeları, e ise kenarları silmek için
@@ -147,6 +143,12 @@ function sendGraphToServer() {
     .catch(error => {
         console.error('Gönderim hatası:', error);
     });
+}
+
+function cleanTheElements()
+{
+    cy.elements().remove();
+    document.getElementById('result').innerText = null;
 }
 
 
