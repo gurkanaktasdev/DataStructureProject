@@ -1,20 +1,25 @@
-﻿
-
-<h1>Graph Ağ Simülasyonu</h1>
+﻿<h1>Graph Ağ Simülasyonu</h1>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <input  class="form-check-input mr-2" type="checkbox" id="directedGraph"> Yönlü Graf 
-            <p id="result" style="margin-top: 20px; font-weight: bold;"></p> <!--- api controllerden gelen verinin yazldığı kısım --->
-            <div id="cy" style="width: 800px; height: 600px; margin-bottom: 10px; border: 1px solid black;"></div>       <!--cytscope frameworkünün çalıştırıldığı kısım/dinamik graph arayüzü ---> 
-            <button type="button" class="btn btn-info " id="sendGraphBtn" onclick="sendGraphToServer()">İşlemi Başlat</button>  <!--buton tetiklenince onclick içindeki fonksiyon tetiklenir ve verileri backend e yollar.  --->
-            <button type="button" class="btn btn-danger" onclick="cleanTheElements()" >Temizle</button>
+            <input class="form-check-input mr-2" type="checkbox" id="directedGraph"> Yönlü Graf
+            <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+            <!--- api controllerden gelen verinin yazldığı kısım --->
+            <div id="cy" style="width: 800px; height: 600px; margin-bottom: 10px; border: 1px solid black;"></div>
+            <!--cytscope frameworkünün çalıştırıldığı kısım/dinamik graph arayüzü --->
+            <button type="button" class="btn btn-info " id="sendGraphBtn" onclick="sendGraphToServer()">İşlemi
+                Başlat</button>
+            <!--buton tetiklenince onclick içindeki fonksiyon tetiklenir ve verileri backend e yollar.  --->
+            <button type="button" class="btn btn-danger" onclick="cleanTheElements()">Temizle</button>
         </div>
         <div class="col">
-            <p></p>
+            <p>djktra algoritmasını çalıştırmak içindeki bir başlangıç düğümü seçiniz.</p>
+            <select id="myStartNodeDjkstra" class="form-select form-select-sm mb-3" aria-label="Small select example">
+                <option selected disabled> Seçim Yapınız</option>
+            </select>
         </div>
-       
+
     </div>
 </div>
 @section Scripts {
