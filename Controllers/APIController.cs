@@ -30,6 +30,16 @@ public class GraphController : ControllerBase
             }
             Console.WriteLine();
         }
+        Console.WriteLine(graph.isDirectedGraph);
+        var deneme = graph.Dijkstra(graph.forDjsktra);
+        foreach(var d in deneme)
+        {
+            Console.WriteLine($"{d.Key} ->"+ d.Value);
+
+        }
+        
+        
+
         return Ok(new
         {
             message = "Graf başarıyla alındı",
