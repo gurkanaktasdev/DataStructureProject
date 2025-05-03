@@ -31,14 +31,22 @@ public class GraphController : ControllerBase
             Console.WriteLine();
         }
         Console.WriteLine(graph.isDirectedGraph);
-        var deneme = graph.Dijkstra(graph.forDjsktra);
-        foreach(var d in deneme)
+        if (graph.forDjsktra != null)
         {
-            Console.WriteLine($"{d.Key} ->"+ d.Value);
+            var deneme = graph.Dijkstra(graph.forDjsktra);
+            foreach (var d in deneme)
+            {
+                Console.WriteLine($"{d.Key} ->" + d.Value);
 
+            }
         }
-        
-        
+        var deneme2 = graph.Prim();
+        foreach(var a in  deneme2)
+        {
+            Console.WriteLine($"{a.source}"+"->" + $"{a.target}");
+        }
+
+
 
         return Ok(new
         {

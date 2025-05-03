@@ -100,6 +100,12 @@ document.addEventListener('keydown', function (event) {
 function selectNodeforDjkstra() {
     const selectElement = document.getElementById("myStartNodeDjkstra");
     selectElement.innerHTML ='';
+    const defaultOption = document.createElement("option");
+    defaultOption.value = '';  
+    defaultOption.textContent = 'Seçim Yapınız';  
+    defaultOption.selected = true; // Varsayılan olarak seçili olsun
+    defaultOption.disabled = true; 
+    selectElement.appendChild(defaultOption);
     cy.nodes().forEach(node => {
         const option = document.createElement("option");
         option.value = node.id();  // Seçilen node'un ID'si
@@ -107,7 +113,7 @@ function selectNodeforDjkstra() {
         selectElement.appendChild(option);  // Select'e option ekle
     });
     // Her node için bir option oluştur ve select'e ekle
-
+    
 }
 
 
@@ -162,6 +168,10 @@ function cleanTheElements() {
     cy.elements().remove();
     document.getElementById('result').innerText = null;
     document.getElementById("myStartNodeDjkstra").innerText = null;
+    if( document.getElementById('directedGraph').checked)
+    {
+        document.getElementById('directedGraph').checked = false;
+    }
 }
 
 

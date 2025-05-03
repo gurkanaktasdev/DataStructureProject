@@ -8,7 +8,7 @@ namespace veriYapilari.Models;
 public class Graph      // json formatında aldığımız verileri grah veri türüne çeviriyoruz . 
 {   
     public bool isDirectedGraph{get; set;} = false;
-    public string forDjsktra {get; set;} = null;
+    public string forDjsktra {get; set;} = null; // djkstra için başlangı düğümü seçilir 
     public Dictionary<string, List<(string target, int weight)>> AdjacencyList { get; set; }
 
     public Graph(GraphData graphData)   // json olarak alınan veriler işleniyor ek olarak Adjacenylist oluşturuluyor .
@@ -71,6 +71,50 @@ public class Graph      // json formatında aldığımız verileri grah veri tü
         }
 
         return distances;
+    }
+    // Prim Algoritması (Minimum Spanning Tree)
+    public List<(string source, string target, int weight)> Prim()
+    {
+        var mstEdges = new List<(string source, string target, int weight)>();
+        var visited = new HashSet<string>();
+        var priorityQueue = new SortedSet<(int weight, string source, string target)>();
+
+        // Başlangıç olarak herhangi bir düğüm seçiyoruz (ilk düğüm)
+        var startNode = AdjacencyList.Keys.First();
+
+        // Başlangıç düğümünün komşularını ekliyoruz
+        foreach (var (neighbor, weight) in AdjacencyList[startNode])
+        {
+            priorityQueue.Add((weight, startNode, neighbor));
+        }
+
+        visited.Add(startNode);
+
+        // Prim algoritması çalıştırıyoruz
+        while (priorityQueue.Count > 0)
+        {
+            // En düşük maliyetli kenarı seçiyoruz
+            var (weight, source, target) = priorityQueue.Min;
+            priorityQueue.Remove(priorityQueue.Min());
+
+            // Eğer hedef düğüm zaten ziyaret edildiyse, geçiyoruz
+            if (visited.Contains(target)) continue;
+
+            // Kenarı MST'ye ekliyoruz
+            mstEdges.Add((source, target, weight));
+            visited.Add(target);
+
+            // Yeni ziyaret edilen düğümün komşularını ekliyoruz
+            foreach (var (neighbor, edgeWeight) in AdjacencyList[target])
+            {
+                if (!visited.Contains(neighbor))
+                {
+                    priorityQueue.Add((edgeWeight, target, neighbor));
+                }
+            }
+        }
+
+        return mstEdges;
     }
 
 }

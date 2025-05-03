@@ -12,7 +12,11 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-    public IActionResult Privacy()
+    public IActionResult AnaSayfa()
+    {
+        return View();
+    }
+    public IActionResult Uygulama()
     {
         return View();
     }
