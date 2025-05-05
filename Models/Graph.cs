@@ -48,7 +48,7 @@ public class Graph      // json formatında aldığımız verileri grah veri tü
 
         distances[start] = 0;
         priorityQueue.Add((0, start));
-
+        
         while (priorityQueue.Count > 0)
         {
             var (currentDistance, currentNode) = priorityQueue.Min;
