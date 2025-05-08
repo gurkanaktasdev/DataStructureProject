@@ -15,46 +15,39 @@ public class GraphController : ControllerBase
         int NodeSayisi = graphData.Nodes.Count();
         int KenarSayisi = graphData.Edges.Count();
 
-        var graph = new Graph(graphData);
+        CustomGraph graph = new();
 
-        // Artık graph.AdjacencyList üzerinden algoritma çalıştırabiliriz
-        Console.WriteLine("Graph başarıyla oluşturuldu!");
-
-        // Örneğin Adjacency Listi yazdır:
-        foreach (var node in graph.AdjacencyList)
+        foreach (var node in graphData.Nodes)   // komşuluk listesinin alt yapısıını oluşturduk.
         {
-            Console.Write($"{node.Key} -> ");
-            foreach (var neighbor in node.Value)
-            {
-                Console.Write($"({neighbor.target}, {neighbor.weight}) ");
-            }
-            Console.WriteLine();
+            graph.AddNode(node.Id!);
         }
-        Console.WriteLine(graph.isDirectedGraph);
-        if (graph.forDjsktra != null)
+
+        foreach (var edge in graphData.Edges)
         {
-            var deneme = graph.Dijkstra(graph.forDjsktra);
+            graph.AddEdge(edge.Source!, edge.Target!, edge.Weight);
+
+             if (!graphData.IsDirected)
+            {
+                graph.AddEdge(edge.Target!, edge.Source!, edge.Weight);
+            }
+        }
+        graph.PrintGraph();
+        Console.WriteLine("----------------");
+         if (graphData.forDijsktra != null)
+        {
+            var deneme = graph.Dijkstra(graphData.forDijsktra);
             foreach (var d in deneme)
             {
                 Console.WriteLine($"{d.Key} ->" + d.Value);
 
             }
         }
-        var deneme2 = graph.Prim();
-        foreach(var a in  deneme2)
-        {
-            Console.WriteLine($"{a.source}"+"->" + $"{a.target}");
-        }
 
 
-
-        return Ok(new
-        {
+        return Ok(new {
             message = "Graf başarıyla alındı",
             nodeCount = NodeSayisi,
             edgeCount = KenarSayisi
-
-
         });
     }
 }

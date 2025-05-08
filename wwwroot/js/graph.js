@@ -129,7 +129,8 @@ function exportGraphData() {
         weight: edge.data('weight')
     }));
     var isDirected = document.getElementById('directedGraph').checked; // graphın yönlü-yönsüz özelliğini öğrenmemize olanak sağlar.
-    var forDijsktra = document.getElementById('myStartNodeDjkstra').value;
+    var forDijsktraValue = document.getElementById('myStartNodeDjkstra').value;
+    var forDijsktra = forDijsktraValue === '' ? null : forDijsktraValue;
     return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra:forDijsktra};
 }
 // bu da yukarıdaki fonksiyon ile düzenlediğimiz veriyapısını backande post etmemize yarar
