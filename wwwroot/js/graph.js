@@ -41,7 +41,7 @@ function addEdge(event) {
             // İlk tıklanan düğüm source olacak
             sourceNode = event.target;
             sourceNode.style('background-color', '#FF4136'); // seçildiğini belli et
-            
+
         } else {
             // İkinci düğüm target olacak
             var targetNode = event.target;
@@ -99,12 +99,12 @@ document.addEventListener('keydown', function (event) {
 });
 function selectNodeforDjkstra() {
     const selectElement = document.getElementById("myStartNodeDjkstra");
-    selectElement.innerHTML ='';
+    selectElement.innerHTML = '';
     const defaultOption = document.createElement("option");
-    defaultOption.value = '';  
-    defaultOption.textContent = 'Seçim Yapınız';  
+    defaultOption.value = '';
+    defaultOption.textContent = 'Seçim Yapınız';
     defaultOption.selected = true; // Varsayılan olarak seçili olsun
-    defaultOption.disabled = true; 
+    defaultOption.disabled = true;
     selectElement.appendChild(defaultOption);
     cy.nodes().forEach(node => {
         const option = document.createElement("option");
@@ -113,7 +113,7 @@ function selectNodeforDjkstra() {
         selectElement.appendChild(option);  // Select'e option ekle
     });
     // Her node için bir option oluştur ve select'e ekle
-    
+
 }
 
 
@@ -129,9 +129,9 @@ function exportGraphData() {
         weight: edge.data('weight')
     }));
     var isDirected = document.getElementById('directedGraph').checked; // graphın yönlü-yönsüz özelliğini öğrenmemize olanak sağlar.
-    var forDijsktraValue = document.getElementById('myStartNodeDjkstra').value;
+    var forDijsktraValue = document.getElementById('myStartNodeDjkstra').value; // Dijkstra algo. için
     var forDijsktra = forDijsktraValue === '' ? null : forDijsktraValue;
-    return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra:forDijsktra};
+    return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra: forDijsktra };
 }
 // bu da yukarıdaki fonksiyon ile düzenlediğimiz veriyapısını backande post etmemize yarar
 function sendGraphToServer() {
@@ -153,12 +153,30 @@ function sendGraphToServer() {
         .then(data => {
             console.log('Sunucudan gelen cevap:', data);
 
-            const resultDiv = document.getElementById('result'); // ekrana backend kısmında işlenen verinin yazılması için bir deneme.
+            const resultDiv = document.getElementById('result');         // ekrana backend kısmında işlenen verinin yazılması için bir deneme.
             resultDiv.innerHTML = `
             <p>${data.message}</p>
             <p>Node Sayısı: ${data.nodeCount}</p>
-            <p>Edge Sayısı: ${data.edgeCount}</p>
+            <p>Edge Sayısı: ${data.edgeCount}</p> `;
+
+            var dijkstraSonucYaz = document.getElementById('dijkstraSonuc');    // dijkstra sonucu eğer var ise
+            if (data.dijkstraSonuc) {
+                let dijkstraResultString = '';
+
+                // Dijkstra sonucunu bir string olarak işleyelim:
+                for (const key in data.dijkstraSonuc) {
+                    if (data.dijkstraSonuc.hasOwnProperty(key)) {
+                        dijkstraResultString += `<p>${key} -> ${data.dijkstraSonuc[key]}</p>`;
+                    }
+                }
+
+                // Dijkstra sonucunu ekrana yazdıralım
+                dijkstraSonucYaz.innerHTML = `
+            <p>Dijkstra Sonuçları:</p>
+            ${dijkstraResultString}
         `;
+            } 
+
         })
         .catch(error => {
             console.error('Gönderim hatası:', error);
@@ -169,10 +187,10 @@ function cleanTheElements() {
     cy.elements().remove();
     document.getElementById('result').innerText = null;
     document.getElementById("myStartNodeDjkstra").innerText = null;
-    if( document.getElementById('directedGraph').checked)
-    {
+    if (document.getElementById('directedGraph').checked) {
         document.getElementById('directedGraph').checked = false;
     }
+    document.getElementById('dijkstraSonuc').innerText = null;
 }
 
 

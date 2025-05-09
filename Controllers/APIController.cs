@@ -33,9 +33,10 @@ public class GraphController : ControllerBase
         }
         graph.PrintGraph();
         Console.WriteLine("----------------");
+         Dictionary<string, int> deneme = null;
          if (graphData.forDijsktra != null)
         {
-            var deneme = graph.Dijkstra(graphData.forDijsktra);
+            deneme = graph.Dijkstra(graphData.forDijsktra);
             foreach (var d in deneme)
             {
                 Console.WriteLine($"{d.Key} ->" + d.Value);
@@ -47,7 +48,8 @@ public class GraphController : ControllerBase
         return Ok(new {
             message = "Graf başarıyla alındı",
             nodeCount = NodeSayisi,
-            edgeCount = KenarSayisi
+            edgeCount = KenarSayisi,
+            dijkstraSonuc = deneme
         });
     }
 }
