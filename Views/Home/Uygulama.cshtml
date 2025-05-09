@@ -47,10 +47,11 @@
             <div class="card">
                 <input class="form-check-input" type="checkbox" id="directedGraph" />
                 <label for="directedGraph" class="form-check-label">Yönlü Graf</label>
+                <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
 
                 <div id="cy" style="width: 100%; height: 500px; margin-top: 20px;"></div>
 
-                <button type="button" class="btn btn-success" onclick="sendGraphToServer()">İşlemi Başlat</button>
+                <button type="button" class="btn btn-success" id="sendGraphBtn" onclick="sendGraphToServer()">İşlemi Başlat</button>
                 <button type="button" class="btn btn-danger" onclick="cleanTheElements()">Temizle</button>
             </div>
         </div>
@@ -58,14 +59,14 @@
         <div class="col-md-6">
             <div class="card">
                 <p>Dijkstra algoritmasını çalıştırmak için bir başlangıç düğümü seçiniz.</p>
-                <select id="myStartNodeDijkstra" class="form-select form-select-sm mb-3">
+                <select id="myStartNodeDjkstra" class="form-select form-select-sm mb-3">
                     <option disabled selected>Bir düğüm seçin</option>
                 </select>
                 <p>Deneme</p>
             </div>
         </div>
     </div>
-</div>
+</div>  
 
 @section Scripts {
     <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
