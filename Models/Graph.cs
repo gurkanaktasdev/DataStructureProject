@@ -65,54 +65,95 @@ public class CustomGraph
         }
     }
     public Dictionary<string, int> Dijkstra(string startId)
-{
-    var distances = new Dictionary<string, int>();
-    var visited = new HashSet<string>();
-    var priorityQueue = new SortedSet<(int distance, string nodeId)>();
-
-    // Tüm düğümler için başlangıçta mesafeleri sonsuz olarak ayarla
-    foreach (var node in nodes.Keys)
     {
-        distances[node] = int.MaxValue;
-    }
+        var distances = new Dictionary<string, int>();
+        var visited = new HashSet<string>();
+        var priorityQueue = new SortedSet<(int distance, string nodeId)>();
 
-    // Başlangıç düğümünün mesafesini sıfır yap
-    distances[startId] = 0;
-    priorityQueue.Add((0, startId));
-
-    while (priorityQueue.Count > 0)
-    {
-        var (currentDistance, currentId) = priorityQueue.Min;
-        priorityQueue.Remove(priorityQueue.Min);
-
-        if (visited.Contains(currentId))
-            continue;
-
-        visited.Add(currentId);
-        var currentNode = nodes[currentId];
-
-        foreach (var edge in currentNode.Neighbors)
+        // Tüm düğümler için başlangıçta mesafeleri sonsuz olarak ayarla
+        foreach (var node in nodes.Keys)
         {
-            var neighbor = edge.TargetNode;
-            int weight = edge.Weight;
+            distances[node] = int.MaxValue;
+        }
 
-            if (visited.Contains(neighbor.Id))
+        // Başlangıç düğümünün mesafesini sıfır yap
+        distances[startId] = 0;
+        priorityQueue.Add((0, startId));
+
+        while (priorityQueue.Count > 0)
+        {
+            var (currentDistance, currentId) = priorityQueue.Min;
+            priorityQueue.Remove(priorityQueue.Min);
+
+            if (visited.Contains(currentId))
                 continue;
 
-            int newDist = currentDistance + weight;
+            visited.Add(currentId);
+            var currentNode = nodes[currentId];
 
-            if (newDist < distances[neighbor.Id])
+            foreach (var edge in currentNode.Neighbors)
             {
-                // Eski giriş varsa kaldır, çünkü SortedSet duplicate istemez
-                priorityQueue.Remove((distances[neighbor.Id], neighbor.Id));
-                distances[neighbor.Id] = newDist;
-                priorityQueue.Add((newDist, neighbor.Id));
+                var neighbor = edge.TargetNode;
+                int weight = edge.Weight;
+
+                if (visited.Contains(neighbor.Id))
+                    continue;
+
+                int newDist = currentDistance + weight;
+
+                if (newDist < distances[neighbor.Id])
+                {
+                    // Eski giriş varsa kaldır, çünkü SortedSet duplicate istemez
+                    priorityQueue.Remove((distances[neighbor.Id], neighbor.Id));
+                    distances[neighbor.Id] = newDist;
+                    priorityQueue.Add((newDist, neighbor.Id));
+                }
             }
         }
+
+        return distances;
+    }
+    public List<(string from, string to, int weight)> PrimMST(string startNodeId)
+    {
+        var mstEdges = new List<(string from, string to, int weight)>();
+        var visited = new HashSet<string>();
+        var priorityQueue = new PriorityQueue<(GraphNode from, GraphEdge edge), int>();
+
+        var startNode = GetNode(startNodeId);
+        if (startNode == null)
+            throw new ArgumentException("Start node not found.");
+
+        visited.Add(startNode.Id);
+
+        // Başlangıç düğümünden çıkan tüm kenarları kuyruğa ekle
+        foreach (var edge in startNode.Neighbors)
+        {
+            priorityQueue.Enqueue((startNode, edge), edge.Weight);
+        }
+
+        while (priorityQueue.Count > 0)
+        {
+            var (fromNode, edge) = priorityQueue.Dequeue();
+            var toNode = edge.TargetNode;
+
+            if (visited.Contains(toNode.Id))
+                continue;
+
+            // MST'ye bu kenarı ekle
+            mstEdges.Add((fromNode.Id, toNode.Id, edge.Weight));
+            visited.Add(toNode.Id);
+
+            // Yeni düğümün komşularını kuyruğa ekle
+            foreach (var nextEdge in toNode.Neighbors)
+            {
+                if (!visited.Contains(nextEdge.TargetNode.Id))
+                {
+                    priorityQueue.Enqueue((toNode, nextEdge), nextEdge.Weight);
+                }
+            }
+        }
+
+        return mstEdges;
     }
 
-    return distances;
-}
-
-    
 }

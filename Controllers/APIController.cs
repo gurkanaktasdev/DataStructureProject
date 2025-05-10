@@ -43,6 +43,15 @@ public class GraphController : ControllerBase
 
             }
         }
+        Console.WriteLine($"{graphData.isPrim} prim  degeri"); // kontrol için yazdırıyorum
+        if(graphData.isPrim)
+        {
+            var primDeneme = graph.PrimMST("a");
+            foreach(var a in primDeneme)
+            {
+                Console.WriteLine($"{a.from} - {a.to} -> {a.weight}");
+            }
+        }
 
 
         return Ok(new {
