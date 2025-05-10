@@ -113,6 +113,48 @@ public class CustomGraph
 
     return distances;
 }
+    public List<(string from, string to, int weight)> PrimMST(string startNodeId)
+    {
+        var mstEdges = new List<(string from, string to, int weight)>();
+        var visited = new HashSet<string>();
+        var priorityQueue = new PriorityQueue<(GraphNode from, GraphEdge edge), int>();
+
+        var startNode = GetNode(startNodeId);
+        if (startNode == null)
+            throw new ArgumentException("Start node not found.");
+
+        visited.Add(startNode.Id);
+
+        // Başlangıç düğümünden çıkan tüm kenarları kuyruğa ekle
+        foreach (var edge in startNode.Neighbors)
+        {
+            priorityQueue.Enqueue((startNode, edge), edge.Weight);
+        }
+
+        while (priorityQueue.Count > 0)
+        {
+            var (fromNode, edge) = priorityQueue.Dequeue();
+            var toNode = edge.TargetNode;
+
+            if (visited.Contains(toNode.Id))
+                continue;
+
+            // MST'ye bu kenarı ekle
+            mstEdges.Add((fromNode.Id, toNode.Id, edge.Weight));
+            visited.Add(toNode.Id);
+
+            // Yeni düğümün komşularını kuyruğa ekle
+            foreach (var nextEdge in toNode.Neighbors)
+            {
+                if (!visited.Contains(nextEdge.TargetNode.Id))
+                {
+                    priorityQueue.Enqueue((toNode, nextEdge), nextEdge.Weight);
+                }
+            }
+        }
+
+        return mstEdges;
+    }
 
     
 }

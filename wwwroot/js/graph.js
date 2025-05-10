@@ -131,7 +131,8 @@ function exportGraphData() {
     var isDirected = document.getElementById('directedGraph').checked; // graphın yönlü-yönsüz özelliğini öğrenmemize olanak sağlar.
     var forDijsktraValue = document.getElementById('myStartNodeDjkstra').value; // Dijkstra algo. için
     var forDijsktra = forDijsktraValue === '' ? null : forDijsktraValue;
-    return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra: forDijsktra };
+    var isPrim = document.getElementById('primAlgoritma').checked;
+    return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra: forDijsktra, isPrim:isPrim };
 }
 // bu da yukarıdaki fonksiyon ile düzenlediğimiz veriyapısını backande post etmemize yarar
 function sendGraphToServer() {
