@@ -132,7 +132,10 @@ function exportGraphData() {
     var forDijsktraValue = document.getElementById('myStartNodeDjkstra').value; // Dijkstra algo. için
     var forDijsktra = forDijsktraValue === '' ? null : forDijsktraValue;
     var isPrim = document.getElementById('primAlgoritma').checked;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1f0bf97d781b1fe1e42670e3a40c36e795343cd
     return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra: forDijsktra, isPrim:isPrim };
 }
 // bu da yukarıdaki fonksiyon ile düzenlediğimiz veriyapısını backande post etmemize yarar
