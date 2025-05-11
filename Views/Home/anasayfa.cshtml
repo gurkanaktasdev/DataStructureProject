@@ -1,5 +1,159 @@
-<h1>AnaSayfa</h1>
-<p>Burada bu web sitesinin ne ise yaradığı ,AnaSayfa içerisinde kullanılan algoritmalar vs gibi bilgiler yer alacak .</p>
-<p>Diskjtra , Prim ,# Kurksal  açıklaması </p>
-<p>NN tuşuna basınca düğüm siliyor - E tuşuna basınca kenar silyor</p>
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-container">
+            <!-- Sol Kısım: Graf Tabanlı Ağ Simülasyonu ve Proje Hakkında -->
+            <div class="hero-left-column">
+                <!-- Üst Kutu: Graf Tabanlı Ağ Simülasyonu -->
+                <div class="hero-box">
+                    <h1 class="hero-title">Graf Tabanlı Ağ Simülasyonu</h1>
+                    <p class="hero-description">
+                        Etkileşimli grafik arayüzüyle algoritmaları keşfet, analiz et ve adım adım takip et!
+                    </p>
+                    <a href="/Home/Uygulama" class="btn-start">
+                        <span class="btn-icon">&#9654;</span> Simülasyonu Başlat
+                    </a>
+                </div>
+                
+                <!-- Alt Kutu: Proje Hakkında Bilgi -->
+                <div class="project-info">
+                    <h3>Projemiz Hakkında</h3>
+                    <p><strong>Graf Veri Modeli ile Ağ Simülasyonu:</strong></p>
+                    <p>Düğümler (node) ve kenarlar (edge) tanımlayarak, maliyet değerlerinin girilebildiği dinamik bir graf arayüzü.</p>
+                    <p>Yönlü veya yönsüz graf seçenekleri, farklı algoritmalar (örneğin, Dijkstra, Prim, Kruskal) ve sonuçların görsel sunumu eklenir.</p>
+                    <p>Kullanıcı, graf üzerinde belirli bir problem tanımlayarak, seçilen algoritmaların sonucunu adım adım izleyebilir.</p>
+                </div>
+            </div>
+            
+<!-- Sağ Kısım: Algoritmalar -->
+<div class="hero-right-column">
+    <!-- Algoritmalar Kısmı -->
+    <section class="algorithms-section">
+        <div class="card shadow-sm algorithm-card">
+            <div class="card-body">
+                <div class="algorithms-header">
+                    <h2>Algoritmalar</h2>
+                </div>
+                <ul class="nav nav-pills justify-content-center mb-4" id="algorithmTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="dijkstra-tab" data-bs-toggle="pill" href="#dijkstra" role="tab" aria-controls="dijkstra" aria-selected="true">Dijkstra</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="prim-tab" data-bs-toggle="pill" href="#prim" role="tab" aria-controls="prim" aria-selected="false">Prim</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="kruskal-tab" data-bs-toggle="pill" href="#kruskal" role="tab" aria-controls="kruskal" aria-selected="false">Kruskal</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="algorithmTabContent">
+                    <div class="tab-pane fade show active" id="dijkstra" role="tabpanel" aria-labelledby="dijkstra-tab">
+                        <div class="algorithm-content">
+                            <img src="images/dijkstra.png" alt="Dijkstra Algoritması" class="algorithm-image" />
+                            <div class="algorithm-description">
+                                <h3>Dijkstra Algoritması</h3>
+                                <p>Dijkstra algoritması, başlangıç düğümünden diğer düğümlere en kısa yolları bulur. Yönlü ve ağırlıklı grafiklerde kullanılır, ancak negatif kenar ağırlıklarını desteklemez. Algoritma, her adımda en düşük maliyetli düğümü seçer ve komşularını günceller. Bu işlem tüm düğümler ziyaret edilene kadar devam eder.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="prim" role="tabpanel" aria-labelledby="prim-tab">
+                        <div class="algorithm-content">
+                            <img src="images/prim.png" alt="Prim Algoritması" class="algorithm-image" />
+                            <div class="algorithm-description">
+                                <h3>Prim Algoritması</h3>
+                                <p>Grafın tüm düğümlerini minimum toplam maliyetle bağlayan Minimum Spanning Tree üretir. Prim algoritması açgözlü (greedy) bir algoritmadır. Algoritma, rastgele bir başlangıç düğümü seçer ve her adımda ağaca en düşük maliyetle bağlanabilecek düğümü ekler. Bu işlem tüm düğümler ağaca eklenene kadar devam eder.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="kruskal" role="tabpanel" aria-labelledby="kruskal-tab">
+                        <div class="algorithm-content">
+                            <img src="images/kruskal.png" alt="Kruskal Algoritması" class="algorithm-image" />
+                            <div class="algorithm-description">
+                                <h3>Kruskal Algoritması</h3>
+                                <p>Kruskal algoritması, Minimum Spanning Tree oluşturmak için kenarları sıralar ve küme birleşimi yapar. Açgözlü yaklaşım kullanır; en düşük ağırlıklı kenarı seçer ve döngü oluşturmayacak şekilde ekler. Seyrek grafikte daha verimlidir ve hızlı sıralama algoritmaları kullanır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        </div>
+    </div>
+</section>
+
+<!-- Algoritmaların Avantajları ve Dezavantajları Tablosu (Yeni Bölüm) -->
+<section class="advantages-section py-5">
+    <div class="container">
+        <div class="card shadow-lg border-0">
+            <div class="card-body">
+                <h3>Algoritmaların Avantajları ve Dezavantajları</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Özellikler</th>
+                            <th>Dijkstra</th>
+                            <th>Prim</th>
+                            <th>Kruskal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Çok sayıda kenar içeren, yoğun grafikleri hızlı çözme</td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Negatif kenar ağırlıkları ile çalışma</td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Minimum Spanning Tree (MST) oluşturma</td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Yönlü grafikleri çözme</td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Çok büyük verilerde hızlı performans</td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sıralama gerektiren kenarları çözme</td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Her kenarın sıralanmasına dayanma</td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-times-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Grafın her kenarını kontrol etme</td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                            <td><i class="fa fa-check-circle"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
 

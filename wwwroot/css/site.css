@@ -19,6 +19,8 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -28,4 +30,309 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/* Navbar içindeki logo */
+.navbar-brand img {
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Kartlar */
+.card {
+    border: none;
+    border-radius: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+/* Hero Section */
+.hero-section {
+    padding: 60px 20px;
+}
+
+.hero-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;  /* Ekranda sıkışan içeriklerin alt alta gelmesini sağlar */
+    align-items: stretch;
+}
+
+/* Hero sol kısmı */
+.hero-left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Hero sağ kısmı (Algoritmalar) */
+.hero-right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.hero-box {
+    background-color: #1976d2;
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn-start {
+    display: inline-block;
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.project-info {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #1976d2;
+}
+/* Algoritmalar kısmı */
+.algorithms-section {
+    height: 100%;
+}
+
+.algorithm-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Bu önemli, içerik taşmasını kontrol eder */
+    flex: 1;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Bu önemli, içerik taşmasını kontrol eder */
+    overflow: hidden;
+}
+
+.tab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Bu önemli, içerik taşmasını kontrol eder */
+    overflow-y: auto; /* Fazla içerik için kaydırma çubuğu */
+}
+
+.tab-pane {
+    flex: 1;
+    min-height: 100%; /* İçeriğin minimum yüksekliği */
+    overflow: hidden;
+}
+
+.algorithm-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    height: 100%;
+    overflow-y: auto;
+    justify-content: center;
+}
+
+.algorithm-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.algorithm-description {
+    text-align: center;
+    max-width: 600px;
+}
+
+.algorithm-description h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.algorithm-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Kaydırma çubuğu stil */
+.tab-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Mobil uyumluluk */
+@media screen and (max-width: 768px) {
+    .algorithm-image {
+        width: 150px;
+    }
+    
+    .algorithm-description h3 {
+        font-size: 1.5rem;
+    }
+    
+    .algorithm-description p {
+        font-size: 1rem;
+    }
+}
+
+/* Avantajlar Tablosu */
+.advantages-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.advantages-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 1.1rem;
+}
+
+.table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #333;
+}
+
+.table td {
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+.table td i {
+    font-size: 1.5rem;
+}
+
+.table td .fa-check-circle {
+    color: green;
+}
+
+.table td .fa-times-circle {
+    color: red;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 8px;
+    }
+}
+
+/* Mobil uyumluluk */
+@media screen and (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-left-column, .hero-right-column {
+        width: 100%;
+    }
+    
+    .algorithm-image {
+        width: 80px;
+    }
+    
+    .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
