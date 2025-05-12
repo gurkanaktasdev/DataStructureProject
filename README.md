@@ -51,8 +51,7 @@ Bu proje, yönlü ve ağırlıklı graf yapıları üzerinde çalışmayı ve ç
 1. Projeyi klonlayın:
 
    ```bash
-   git clone https://github.com/gurkanaktasdev/DataStructureProject.git
-   cd 
+   git clone https://github.com/gurkanaktasdev/DataStructureProject.git 
 2. Projeyi Başlat
     ```
     dotnet restore
