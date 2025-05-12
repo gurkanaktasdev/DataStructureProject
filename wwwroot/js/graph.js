@@ -63,6 +63,7 @@ function addEdge(event) {
             sourceNode = null;
         }
         selectNodeforDjkstra()
+        selectNodeforPrim()
     }
 }
 // mouse sol tık dinleyicisi
@@ -115,6 +116,25 @@ function selectNodeforDjkstra() {
     // Her node için bir option oluştur ve select'e ekle
 
 }
+function selectNodeforPrim() {
+    const selectElement = document.getElementById("myStartNodePrim");
+    selectElement.innerHTML = '';
+    const defaultOption = document.createElement("option");
+    defaultOption.value = '';
+    defaultOption.textContent = 'Seçim Yapınız';
+    defaultOption.selected = true; // Varsayılan olarak seçili olsun
+    defaultOption.disabled = true;
+    selectElement.appendChild(defaultOption);
+    cy.nodes().forEach(node => {
+        const option = document.createElement("option");
+        option.value = node.id();  // Seçilen node'un ID'si
+        option.textContent = node.id();  // Seçilen node'un label'ı (ID olarak kullanılıyor)
+        selectElement.appendChild(option);  // Select'e option ekle
+    });
+    // Her node için bir option oluştur ve select'e ekle
+
+}
+
 
 
 // backande kısmını dinamik oluşturduğumuz graph veriyapısını düzenlememize olanak sağlar.
@@ -131,8 +151,11 @@ function exportGraphData() {
     var isDirected = document.getElementById('directedGraph').checked; // graphın yönlü-yönsüz özelliğini öğrenmemize olanak sağlar.
     var forDijsktraValue = document.getElementById('myStartNodeDjkstra').value; // Dijkstra algo. için
     var forDijsktra = forDijsktraValue === '' ? null : forDijsktraValue;
-    var isPrim = document.getElementById('primAlgoritma').checked;
-    return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra: forDijsktra, isPrim:isPrim };
+    var forPrimValue = document.getElementById('myStartNodePrim').value; // Prim algo. için
+    var isPrim = forPrimValue === '' ? null : forPrimValue;
+    var isKruskal = document.getElementById('kruskalAlgoritma').checked;
+
+    return { nodes: nodes, edges: edges, isDirected: isDirected, forDijsktra: forDijsktra, isPrim: isPrim, isKruskal: isKruskal };
 }
 // bu da yukarıdaki fonksiyon ile düzenlediğimiz veriyapısını backande post etmemize yarar
 function sendGraphToServer() {
@@ -176,7 +199,34 @@ function sendGraphToServer() {
             <p>Dijkstra Sonuçları:</p>
             ${dijkstraResultString}
         `;
-            } 
+            }
+            var primSonucYaz = document.getElementById('primSonuc');
+            if (data.primSonuc) {
+                let primResultString = '';
+                for (let i = 0; i < data.primSonuc.length; i++) {
+                    const edge = data.primSonuc[i];
+                    primResultString += `<p>${edge.from} -> ${edge.to} : ${edge.weight}</p>`;
+                }
+                // ekrana yazdıralım.
+                primSonucYaz.innerHTML = `
+                <p>Prim Sonuçları : </p>
+                ${primResultString}
+                `;
+            }
+            var kruskalSonucYaz = document.getElementById('kruskalSonuc');
+            if (data.kruskalSonuc) {
+                let kruskalResultString = '';
+                for (let i = 0; i < data.kruskalSonuc.length; i++) {
+                    const edge = data.kruskalSonuc[i];
+                    kruskalResultString += `<p>${edge.from} -> ${edge.to} : ${edge.weight}</p>`;
+                }
+                //ekrana yolla
+                kruskalSonucYaz.innerHTML = `
+                <p>Kruskal Sonuçları : </p>
+                ${kruskalResultString}
+                `;
+            }
+
 
         })
         .catch(error => {
@@ -188,10 +238,16 @@ function cleanTheElements() {
     cy.elements().remove();
     document.getElementById('result').innerText = null;
     document.getElementById("myStartNodeDjkstra").innerText = null;
+    document.getElementById('dijkstraSonuc').innerText = null;
+    document.getElementById('primSonuc').innerText = null;
+    document.getElementById("myStartNodePrim").innerText = null;
     if (document.getElementById('directedGraph').checked) {
         document.getElementById('directedGraph').checked = false;
     }
-    document.getElementById('dijkstraSonuc').innerText = null;
+    if (document.getElementById('kruskalAlgoritma').checked) {
+        document.getElementById('kruskalAlgoritma').checked = false;
+    }
+    document.getElementById('kruskalSonuc').innerText = null;
 }
 
 
