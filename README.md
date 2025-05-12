@@ -24,20 +24,25 @@ Bu proje, yönlü ve ağırlıklı graf yapıları üzerinde çalışmayı ve ç
 
 > 🔔 Not: Bu etkileşimler yalnızca grafik alanı (Cytoscape.js görselleştirmesi) üzerinde geçerlidir.
 ---
-##Kullanılan Veri Yapıları
--**Graph** 
-    Dinamik bir şekilde oluşturulan düğümleri ve kenarları anlamlı hale getirmemize olanak sağlar.
--**Priority Queue (Öncelikli Kuyruk)** 
-    Dijkstra algoritması gibi kısa yol bulma işlemlerinde, minimum mesafeye sahip düğümü hızlıca seçmek için kullanılır.
--**HashSet\<string\>**  
-    Ziyaret edilen düğümlerin kaydını tutarak tekrar ziyaretleri engeller.
--**Dictionary\<string, int\>:** 
-    Düğümlerin mesafe veya ağırlık bilgilerini saklamak için 
+### 🧱 Kullanılan Veri Yapıları
+
+- **Graph**  
+  Dinamik bir şekilde oluşturulan düğümleri ve kenarları anlamlı hale getirmemize olanak sağlar.
+
+- **Priority Queue (Öncelikli Kuyruk)**  
+  Dijkstra algoritması gibi kısa yol bulma işlemlerinde, minimum mesafeye sahip düğümü hızlıca seçmek için kullanılır.
+
+- **HashSet\<string\>**  
+  Ziyaret edilen düğümlerin kaydını tutarak tekrar ziyaretleri engeller.
+
+- **Dictionary\<string, int\>**  
+  Düğümlerin mesafe veya ağırlık bilgilerini saklamak için kullanılır.
+
 ---
 
 ## 🚀 Kurulum
----
-## 🛠️ Kullanılan Teknolojiler
+
+#🛠️ Kullanılan Teknolojiler
 - `C#`
 - `.NET 9 / ASP.NET Core MVC`
 - `JavaScript` (Cytoscape.js ile grafik çizimi)
