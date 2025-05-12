@@ -51,7 +51,7 @@
                 <div class="tab-content" id="algorithmTabContent">
                     <div class="tab-pane fade show active" id="dijkstra" role="tabpanel" aria-labelledby="dijkstra-tab">
                         <div class="algorithm-content">
-                            <img src="images/dijkstra.png" alt="Dijkstra Algoritması" class="algorithm-image" />
+                            <img src="/images/dijkstragif.gif" alt="Dijkstra Algoritması" width="200" />
                             <div class="algorithm-description">
                                 <h3>Dijkstra Algoritması</h3>
                                 <p>Dijkstra algoritması, başlangıç düğümünden diğer düğümlere en kısa yolları bulur. Yönlü ve ağırlıklı grafiklerde kullanılır, ancak negatif kenar ağırlıklarını desteklemez. Algoritma, her adımda en düşük maliyetli düğümü seçer ve komşularını günceller. Bu işlem tüm düğümler ziyaret edilene kadar devam eder.</p>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="tab-pane fade" id="prim" role="tabpanel" aria-labelledby="prim-tab">
                         <div class="algorithm-content">
-                            <img src="images/prim.png" alt="Prim Algoritması" class="algorithm-image" />
+                            <img src="/images/primgif.gif" alt="Prim Algoritması" width="200" />
                             <div class="algorithm-description">
                                 <h3>Prim Algoritması</h3>
                                 <p>Grafın tüm düğümlerini minimum toplam maliyetle bağlayan Minimum Spanning Tree üretir. Prim algoritması açgözlü (greedy) bir algoritmadır. Algoritma, rastgele bir başlangıç düğümü seçer ve her adımda ağaca en düşük maliyetle bağlanabilecek düğümü ekler. Bu işlem tüm düğümler ağaca eklenene kadar devam eder.</p>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="tab-pane fade" id="kruskal" role="tabpanel" aria-labelledby="kruskal-tab">
                         <div class="algorithm-content">
-                            <img src="images/kruskal.png" alt="Kruskal Algoritması" class="algorithm-image" />
+                            <img src="/images/kruskalgif.gif" alt="Kruskal Algoritması" width="200" />
                             <div class="algorithm-description">
                                 <h3>Kruskal Algoritması</h3>
                                 <p>Kruskal algoritması, Minimum Spanning Tree oluşturmak için kenarları sıralar ve küme birleşimi yapar. Açgözlü yaklaşım kullanır; en düşük ağırlıklı kenarı seçer ve döngü oluşturmayacak şekilde ekler. Seyrek grafikte daha verimlidir ve hızlı sıralama algoritmaları kullanır.</p>
@@ -85,75 +85,209 @@
     </div>
 </section>
 
-<!-- Algoritmaların Avantajları ve Dezavantajları Tablosu (Yeni Bölüm) -->
-<section class="advantages-section py-5">
-    <div class="container">
-        <div class="card shadow-lg border-0">
-            <div class="card-body">
-                <h3>Algoritmaların Avantajları ve Dezavantajları</h3>
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Özellikler</th>
-                            <th>Dijkstra</th>
-                            <th>Prim</th>
-                            <th>Kruskal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Çok sayıda kenar içeren, yoğun grafikleri hızlı çözme</td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Negatif kenar ağırlıkları ile çalışma</td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Minimum Spanning Tree (MST) oluşturma</td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Yönlü grafikleri çözme</td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Çok büyük verilerde hızlı performans</td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Sıralama gerektiren kenarları çözme</td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Her kenarın sıralanmasına dayanma</td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-times-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Grafın her kenarını kontrol etme</td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                            <td><i class="fa fa-check-circle"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<section class="quiz-intro-box">
+  <div class="container">
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <h3>Hangi algoritma size uygun?</h3>
+        <p>Graf yapınıza en uygun algoritmayı birkaç soruda öğrenin.</p>
+        <button id="startQuizBtn" class="btn btn-primary">Testi Başlat</button>
+      </div>
     </div>
+
+    <div id="quizForm">
+      <form id="algorithmQuiz">
+        <div class="mb-3">
+          <label>1. Graf yönlü mü?</label>
+          <select name="q1" class="form-select">
+            <option value="yes">Evet</option>
+            <option value="no">Hayır</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>2. Negatif kenar ağırlıkları olabilir mi?</label>
+          <select name="q2" class="form-select">
+            <option value="yes">Evet</option>
+            <option value="no">Hayır</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>3. Amacınız en kısa yolu bulmak mı yoksa minimum ağ mı oluşturmak?</label>
+          <select name="q3" class="form-select">
+            <option value="shortest">En kısa yol</option>
+            <option value="mst">Minimum Spanning Tree (MST)</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>4. Graf yoğun mu? (çok kenarlı)</label>
+          <select name="q4" class="form-select">
+            <option value="yes">Evet</option>
+            <option value="no">Hayır</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>5. Sıralama gerektiren kenar işlemleri var mı?</label>
+          <select name="q5" class="form-select">
+            <option value="yes">Evet</option>
+            <option value="no">Hayır</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Algoritmayı Öner</button>
+      </form>
+
+      <div id="resultBox" style="display:none;" class="alert alert-info">
+        <h4>Önerilen Algoritma: <span id="recommendedAlgo"></span></h4>
+        <p id="algoExplanation"></p>
+      </div>
+
+      <div id="noMatchBox" style="display:none;" class="alert alert-warning">
+        <h5>Sonuç Bulunamadı</h5>
+        <p>Verdiğiniz cevaplara tam uyan bir algoritma öneremiyoruz. Lütfen farklı bir kombinasyon deneyin veya algoritmalar sekmesini inceleyin.</p>
+        <a href="#algorithmTabs" class="btn btn-outline-primary mt-2">Algoritmaları İncele</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script>
+  const startBtn = document.getElementById('startQuizBtn');
+  const form = document.getElementById('quizForm');
+
+  startBtn.addEventListener('click', function () {
+    form.classList.add('show');
+    startBtn.style.display = 'none';
+  });
+
+  document.getElementById('algorithmQuiz').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const q1 = e.target.q1.value; // yönlü mü?
+    const q2 = e.target.q2.value; // negatif kenar var mı?
+    const q3 = e.target.q3.value; // amaç ne?
+    const q4 = e.target.q4.value; // graf yoğun mu?
+    const q5 = e.target.q5.value; // sıralama gereksinimi?
+
+    let result = '';
+    let explanation = '';
+
+    const resultBox = document.getElementById('resultBox');
+    const noMatchBox = document.getElementById('noMatchBox');
+
+    resultBox.style.display = 'none';
+    noMatchBox.style.display = 'none';
+
+    // --- En kısa yol problemleri ---
+    if (q3 === 'shortest') {
+      if (q2 === 'yes') {
+        result = 'Bellman-Ford';
+        explanation = 'Negatif kenar ağırlıkları varsa Dijkstra algoritması çalışmaz. Bellman-Ford algoritması bu durumlar için uygundur.';
+      } else {
+        result = 'Dijkstra';
+        explanation = 'Pozitif kenar ağırlıklı graf için Dijkstra algoritması en kısa yolu bulmada etkilidir.';
+      }
+    }
+
+    // --- Minimum Spanning Tree (MST) problemleri ---
+    else if (q3 === 'mst') {
+      if (q1 === 'yes') {
+        result = 'Edmonds\' Algorithm';
+        explanation = 'Yönlü graflarda MST oluşturmak için klasik algoritmalar (Prim/Kruskal) yetersiz kalır. Edmonds\' algoritması tercih edilir.';
+      } else {
+        if (q4 === 'yes') {
+          if (q5 === 'yes') {
+            result = 'Kruskal';
+            explanation = 'Sıralama gerekiyorsa ve graf yoğun değilse Kruskal algoritması idealdir.';
+          } else {
+            result = 'Prim';
+            explanation = 'Yoğun graflarda sıralama gerekmeden çalışan Prim algoritması daha etkilidir.';
+          }
+        } else {
+          result = 'Kruskal';
+          explanation = 'Seyrek graflarda ve sıralama gereken durumlarda Kruskal algoritması uygundur.';
+        }
+
+        // Negatif ağırlık özel durumu
+        if (q2 === 'yes') {
+          explanation += ' Ayrıca, negatif kenar ağırlıkları MST için sorun oluşturmaz.';
+        }
+      }
+    }
+
+    // --- Sonuç gösterme ---
+    if (result !== '') {
+      document.getElementById('recommendedAlgo').innerText = result;
+      document.getElementById('algoExplanation').innerText = explanation;
+      resultBox.style.display = 'block';
+    } else {
+      noMatchBox.style.display = 'block';
+    }
+  });
+</script>
+
+<section class="team-section mt-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Proje Ekibi</h2>
+    <div class="row justify-content-center">
+
+      <!-- Üye 1 -->
+      <div class="col-md-4 col-lg-2 team-member text-center">
+        <img src="images/alperfoto.jpeg" alt="Alper Yıldız" class="team-photo">
+        <h5>Alper Yıldız</h5>
+        <p><a href="mailto:alper_921@outlook.com">alper_921@outlook.com</a></p>
+        <a href="https://www.linkedin.com/in/alper-y%C4%B1ld%C4%B1z-181265226/" target="_blank" class="linkedin-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <!-- Üye 2 -->
+      <div class="col-md-4 col-lg-2 team-member text-center">
+        <img src="images/team/elif.jpg" alt="Gürkan Aktaş" class="team-photo">
+        <h5>Gürkan Aktaş</h5>
+        <p><a href="mailto:elif@example.com">elif@example.com</a></p>
+        <a href="https://www.linkedin.com/in/gurkan-aktas-041ba8295/" target="_blank" class="linkedin-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <!-- Üye 3 -->
+      <div class="col-md-4 col-lg-2 team-member text-center">
+        <img src="images/alpayfoto.jpeg" alt="Alpay Tunalı" class="team-photo">
+        <h5>Alpay Tunalı</h5>
+        <p><a href="mailto:mehmet@example.com">mehmet@example.com</a></p>
+        <a href="https://www.linkedin.com/in/alpay-tunali-3067b4324/" target="_blank" class="linkedin-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <!-- Üye 4 -->
+      <div class="col-md-4 col-lg-2 team-member text-center">
+        <img src="images/mustafafoto.jpeg" alt="Mustafa Sait Çiftçi" class="team-photo">
+        <h5>Mustafa Sait Çiftçi</h5>
+        <p><a href="mailto:zeynep@example.com">zeynep@example.com</a></p>
+        <a href="https://www.linkedin.com/in/mustafa-sait-%C3%A7if%C3%A7i-4b8633290/" target="_blank" class="linkedin-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <!-- Üye 5 -->
+      <div class="col-md-4 col-lg-2 team-member text-center">
+        <img src="images/team/burak.jpg" alt="Mehmet Akif Dereci" class="team-photo">
+        <h5>Mehmet Akif Dereci</h5>
+        <p><a href="mailto:burak@example.com">burak@example.com</a></p>
+        <a href="https://www.linkedin.com" target="_blank" class="linkedin-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 

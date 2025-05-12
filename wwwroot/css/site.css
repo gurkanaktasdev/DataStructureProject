@@ -238,101 +238,173 @@ footer {
     }
 }
 
-/* Avantajlar Tablosu */
-.advantages-section {
-    background-color: #f9f9f9;
-    padding: 60px 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 10px;
+/* Genel kutu */
+.quiz-intro-box .card {
+  background: linear-gradient(135deg, #e9f0ff, #f9fcff);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  padding: 30px;
 }
 
-.advantages-section h3 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #007bff;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
+.quiz-intro-box .card:hover {
+  transform: scale(1.01);
 }
 
-.table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    font-family: 'Open Sans', sans-serif;
+/* Başlık ve açıklama */
+.quiz-intro-box h3 {
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #2b2f4b;
 }
 
-.table th, .table td {
-    padding: 12px 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-    font-size: 1.1rem;
+.quiz-intro-box p {
+  font-size: 1rem;
+  color: #555c77;
 }
 
-.table th {
-    background-color: #f1f1f1;
-    font-weight: bold;
-    color: #333;
+/* Butonlar */
+.quiz-intro-box .btn {
+  padding: 12px 26px;
+  font-size: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-.table td {
-    background-color: #fff;
-    font-size: 1rem;
+.quiz-intro-box .btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-.table td i {
-    font-size: 1.5rem;
+.quiz-intro-box .btn-success:hover {
+  background-color: #218838;
+  transform: scale(1.05);
 }
 
-.table td .fa-check-circle {
-    color: green;
+.quiz-intro-box .btn-outline-primary:hover {
+  transform: scale(1.05);
 }
 
-.table td .fa-times-circle {
-    color: red;
+/* Form geçiş animasyonu */
+#quizForm {
+  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+  margin-top: 25px;
 }
 
-.card {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+#quizForm.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
 
-.card-body {
-    background-color: #fff;
-    padding: 30px;
+/* Soru alanları */
+.quiz-intro-box .mb-3 {
+  margin-bottom: 20px;
 }
 
-.table-striped tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+.quiz-intro-box label {
+  font-weight: 600;
+  color: #34495e;
+  display: block;
+  margin-bottom: 8px;
 }
 
-.table-bordered th, .table-bordered td {
-    border: 1px solid #ddd;
+/* Select kutuları */
+.quiz-intro-box select.form-select {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+#startQuizBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  max-width: 200px;
+  width: auto;
+  margin: 0 auto;
+}
+.quiz-intro-box select.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
 }
 
-@media (max-width: 768px) {
-    .table th, .table td {
-        padding: 8px;
-    }
+/* Sonuç kutuları */
+#resultBox, #noMatchBox {
+  margin-top: 25px;
+  border-radius: 14px;
+  padding: 22px;
+  font-size: 1rem;
+  animation: fadeIn 0.5s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobil uyumluluk */
-@media screen and (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-    }
-    
-    .hero-left-column, .hero-right-column {
-        width: 100%;
-    }
-    
-    .algorithm-image {
-        width: 80px;
-    }
-    
-    .d-flex {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Fade animasyon */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+.team-section {
+  background: #f9fbff;
+  padding: 60px 0;
+  border-top: 1px solid #ddd;
+}
+
+.team-section h2 {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.team-member {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #007bff33;
+}
+
+.team-member h5 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.team-member a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.linkedin-link i {
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
