@@ -113,7 +113,7 @@ public class CustomGraph
 
         return distances;
     }
-    public List<(string from, string to, int weight)> PrimMST(string startNodeId)
+    public List<(string from, string to, int weight)> PrimMST(string startNodeId)  // Prim algoritması
     {
         var mstEdges = new List<(string from, string to, int weight)>();
         var visited = new HashSet<string>();
@@ -155,4 +155,63 @@ public class CustomGraph
 
         return mstEdges;
     }
-}
+    public List<(string SourceId, GraphEdge Edge)> Kruskal()
+{
+    var mst = new List<(string SourceId, GraphEdge Edge)>();
+    var edgeList = new List<(string SourceId, GraphEdge Edge)>();
+    var added = new HashSet<string>();  // Çift yönlü tekrarları önlemek için
+
+    // Kenarları toplarken source bilgisini de ekliyoruz
+    foreach (var node in nodes)
+    {
+        foreach (var edge in node.Value.Neighbors)
+        {
+            string key = node.Key + "-" + edge.TargetNode.Id;
+            string reverseKey = edge.TargetNode.Id + "-" + node.Key;
+            if (!added.Contains(key) && !added.Contains(reverseKey))
+            {
+                edgeList.Add((node.Key, edge));
+                added.Add(key);
+            }
+        }
+    }
+
+    // Ağırlıklarına göre sıralıyoruz
+    edgeList.Sort((a, b) => a.Edge.Weight.CompareTo(b.Edge.Weight));
+
+    var disjointSet = new Dictionary<string, string>();
+    foreach (var node in nodes.Keys)
+    {
+        disjointSet[node] = node;
+    }
+
+    string Find(string node)
+    {
+        if (disjointSet[node] != node)
+            disjointSet[node] = Find(disjointSet[node]);
+        return disjointSet[node];
+    }
+
+    void Union(string node1, string node2)
+    {
+        string root1 = Find(node1);
+        string root2 = Find(node2);
+        if (root1 != root2)
+            disjointSet[root2] = root1;
+    }
+
+    foreach (var (sourceId, edge) in edgeList)
+    {
+        var root1 = Find(sourceId);
+        var root2 = Find(edge.TargetNode.Id);
+        if (root1 != root2)
+        {
+            mst.Add((sourceId, edge));
+            Union(root1, root2);
+        }
+    }
+
+    return mst;
+    }
+
+}    

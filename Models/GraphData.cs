@@ -6,7 +6,8 @@ public class GraphData      // API üzerinden iletilen json türündeki verinin 
     public List<Edge>? Edges { get; set; }
     public bool IsDirected { get; set; } = true; // yönlü - Yönsüz kenar kontrolü için 
     public string? forDijsktra {get; set;} // dijkstra algoritması için başlangıç node un Id si.
-    public bool isPrim {get; set;} = true; // prim algoritması için 
+    public string? isPrim {get; set;}  // prim algoritması için 
+    public bool isKruskal{get; set;} = false; // Kruskal Algo seçilip seçilmediği
 }
 public class Node
 {
