@@ -234,7 +234,7 @@ function sendGraphToServer() {
         });
 }
 
-function cleanTheElements() {
+function cleanTheElements() { // sayfayı temizle butonu ile tetiklenir.
     cy.elements().remove();
     document.getElementById('result').innerText = null;
     document.getElementById("myStartNodeDjkstra").innerText = null;

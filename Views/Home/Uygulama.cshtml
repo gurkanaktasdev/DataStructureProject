@@ -81,35 +81,35 @@
 
                 <div id="cy" style="width: 100%; height: 500px; margin-top: 20px;"></div>
 
-                <button type="button" class="btn btn-success" id="sendGraphBtn" onclick="sendGraphToServer()">İşlemi
+                <button type="button" class="btn btn-success mt-3" id="sendGraphBtn" onclick="sendGraphToServer()">İşlemi
                     Başlat</button>
-                <button type="button" class="btn btn-danger" onclick="cleanTheElements()">Temizle</button>
+                <button type="button" class="btn btn-danger mt-3" onclick="cleanTheElements()">Temizle</button>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="card">
-                <p class="custom-bold">Dijkstra algoritmasını çalıştırmak için bir başlangıç düğümü seçiniz.</p>
+                <p class="fw-bold">Dijkstra algoritmasını çalıştırmak için bir başlangıç düğümü seçiniz.</p>
                 <select id="myStartNodeDjkstra" class="form-select form-select-sm mb-3">
                     <option disabled selected>Bir düğüm seçin</option>
                 </select>
-                <div id="dijkstraSonuc">
+                <div id="dijkstraSonuc" class="fw-bold">
 
                 </div>
             </div>
             <div class="card mt-5">
-                <p class="custom-bold">Prim algoritmasını çalıştırmak için bir başlangıç düğümü seçiniz.</p>
+                <p class="fw-bold">Prim algoritmasını çalıştırmak için bir başlangıç düğümü seçiniz.</p>
                 <select id="myStartNodePrim" class="form-select form-select-sm mb-3">
                     <option disabled selected>Bir düğüm seçin</option>
                 </select>
-                <div id="primSonuc">
+                <div id="primSonuc" class="fw-bold">
 
                 </div>
             </div>
             <div class="card mt-5">
                 <label for="kruskalAlgoritma" class="form-check-label custom-bold" style="display: inline-block;">Kruskal Algoritması</label>
                 <input class="form-check-input" style="display: inline-block;" type="checkbox" id="kruskalAlgoritma" />
-                <div id="kruskalSonuc">
+                <div id="kruskalSonuc" class="fw-bold">
 
                 </div>
             </div>

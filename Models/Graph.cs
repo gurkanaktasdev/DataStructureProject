@@ -110,6 +110,18 @@ public class CustomGraph
                 }
             }
         }
+        List<string> keysToRemove = new List<string>();  // Dijkstradaki değeri 0 ya da intmax ise onu silmemize yarayan liste
+        foreach(var x in distances)     // Dict üzerinde gezerken doğrudan silme işlmei yapamadığımz için ilk önce silinecek ögeleri topluyoruz.
+        {
+            if(x.Value == 0 || x.Value == int.MaxValue)
+            {
+                keysToRemove.Add(x.Key);      
+            }
+        }
+        foreach(var del in keysToRemove)        // burada da silme işlmeini gerçekliştiriz.
+        {
+            distances.Remove(del);
+        }
 
         return distances;
     }
